@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/screens/about/about_page.dart';
 import 'package:portfolio/screens/home/home_page.dart';
 import 'package:portfolio/utils/app_colors.dart';
 
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
+      routes: {
+        '/about': (context) => const AboutPage(),
+      },
       home: const HomePage(),
     );
   }

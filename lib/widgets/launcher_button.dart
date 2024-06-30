@@ -3,21 +3,35 @@ import 'package:portfolio/utils/app_colors.dart';
 
 class LauncherButton extends StatelessWidget {
   final String buttonTitle;
-  const LauncherButton({super.key, required this.buttonTitle});
+  final VoidCallback onTap;
+  const LauncherButton(
+      {super.key, required this.buttonTitle, required this.onTap});
 
   @override
-  ElevatedButton build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: () => (),
-      label:  Text(
-        buttonTitle,
-        style: const TextStyle(
-          decorationColor: AppColors.accentColor,
-          fontSize: 18,
-        ),
+  GestureDetector build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Text(
+            buttonTitle,
+            style: const TextStyle(
+              fontSize: 18,
+              color: AppColors.accentColor,
+              decoration: TextDecoration.underline,
+              decorationColor: AppColors.accentColor,
+              decorationThickness: 2,
+            ),
+          ),
+          const SizedBox(
+            width: 5,
+          ),
+          const Icon(
+            Icons.arrow_outward,
+            color: AppColors.accentColor,
+          ),
+        ],
       ),
-      icon: const Icon(Icons.arrow_outward),
-      iconAlignment: IconAlignment.end,
     );
   }
 }

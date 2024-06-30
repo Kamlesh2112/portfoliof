@@ -7,11 +7,15 @@ class Project extends StatelessWidget {
   final String title;
   final String description;
   final String buttonTitle;
+  final String imageUrl;
+  final VoidCallback onTapLink;
   const Project(
       {super.key,
       required this.title,
       required this.description,
-      required this.buttonTitle});
+      required this.buttonTitle,
+      required this.imageUrl,
+      required this.onTapLink});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +40,12 @@ class Project extends StatelessWidget {
               Container(
                 height: 300,
                 width: 500,
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.backgroundColor),
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  color: AppColors.accentColor,
+                  child: Image.asset(
+                    imageUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ],
@@ -74,6 +80,7 @@ class Project extends StatelessWidget {
                 ),
                 LauncherButton(
                   buttonTitle: buttonTitle,
+                  onTap: onTapLink,
                 ),
               ],
             ),
