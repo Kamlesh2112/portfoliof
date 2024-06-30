@@ -435,7 +435,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                               const Row(
                                 children: [
                                   IconFont(
-                                    url: 'https://x.com/adarshpandey18',
+                                    url: 'https://x.com/adarshvjpandey',
                                     icon: FontAwesomeIcons.xTwitter,
                                   ),
                                   IconFont(

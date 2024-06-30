@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/about/desktop_about_page.dart';
+import 'package:portfolio/screens/about/mobile_about_page.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class AboutPage extends StatefulWidget {
@@ -14,6 +15,7 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       desktop: (context) => const DesktopAboutPage(),
+      mobile: (context)=> const MobileAboutPage(),
     );
   }
 }

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/app_colors.dart';
@@ -52,7 +50,31 @@ class _MobileHomePageState extends State<MobileHomePage> {
           ),
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+          surfaceTintColor: AppColors.accentColor,
+          child: Column(
+            children: [
+              const DrawerHeader(
+                child: FaIcon(
+                  FontAwesomeIcons.code,
+                  color: AppColors.accentColor,
+                ),
+              ),
+              ListTile(
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed('/about');},
+                leading: const FaIcon(
+                  FontAwesomeIcons.question,
+                  color: AppColors.accentColor,
+                ),
+                title: const Text(
+                  'ABOUT',
+                  style: TextStyle(fontSize: 18),
+                ),
+              )
+            ],
+          )),
       body: SingleChildScrollView(
         child: Padding(
           // <<<<<<<<<<<<<<<<<<< MAIN >>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -208,6 +230,9 @@ class _MobileHomePageState extends State<MobileHomePage> {
                 onTapLink: () =>
                     launchLink('https://github.com/adarshpandey18/Weather-App'),
               ),
+              const SizedBox(
+                height: 30,
+              ),
               const Divider(
                 color: AppColors.secondaryColor,
               ),
@@ -239,8 +264,10 @@ class _MobileHomePageState extends State<MobileHomePage> {
               ),
               LauncherButton(
                 buttonTitle: "MORE ABOUT ME",
-                onTap: () =>
-                    Navigator.of(context).pushReplacementNamed('/about'),
+                onTap: () => Navigator.of(context).pushNamed('/about'),
+              ),
+              const SizedBox(
+                height: 30,
               ),
               const Divider(
                 color: AppColors.secondaryColor,
@@ -263,7 +290,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                   const Text(
                     "Say hello at ",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   GestureDetector(
@@ -273,7 +300,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                       "itsadarshvijaypandey@gmail.com",
                       style: TextStyle(
                         color: AppColors.accentColor,
-                        fontSize: 16,
+                        fontSize: 14,
                       ),
                     ),
                   ),
@@ -287,7 +314,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                   const Text(
                     "For more info, here's my ",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   GestureDetector(
@@ -297,7 +324,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                       "resume",
                       style: TextStyle(
                         color: AppColors.accentColor,
-                        fontSize: 16,
+                        fontSize: 14,
                       ),
                     ),
                   ),
@@ -306,7 +333,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
               const Row(
                 children: [
                   IconFont(
-                    url: 'https://x.com/adarshpandey18',
+                    url: 'https://x.com/adarshvjpandey',
                     icon: FontAwesomeIcons.xTwitter,
                   ),
                   IconFont(
