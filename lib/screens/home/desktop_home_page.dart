@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/app_colors.dart';
@@ -27,17 +25,6 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     }
   }
 
-  final ScrollController _scrollController = ScrollController();
-  GlobalKey contact = GlobalKey();
-  GlobalKey work = GlobalKey();
-
-  void scrollToContainer(GlobalKey key) {
-    _scrollController.animateTo(
-        key.currentContext!.findRenderObject()!.semanticBounds.top,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOut);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +49,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: () => scrollToContainer(work),
+                      onTap: () => {},
                       child: const Text(
                         "Work",
                         style: TextStyle(fontSize: 16),
@@ -82,7 +69,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                       width: 32,
                     ),
                     GestureDetector(
-                      onTap: () => scrollToContainer(contact),
+                      onTap: () => {},
                       child: const Text(
                         "Contact",
                         style: TextStyle(fontSize: 16),
@@ -149,8 +136,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     ElevatedButton.icon(
-                                      onPressed: () =>
-                                          scrollToContainer(contact),
+                                      onPressed: () => {},
                                       style: ElevatedButton.styleFrom(
                                         foregroundColor:
                                             AppColors.backgroundColor,
@@ -227,7 +213,6 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                     // <<<<<<<<<<< FEATURED PROJECT SECTION >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                     Column(
-                      key: work,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(
@@ -366,7 +351,6 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                       height: 80,
                     ),
                     Container(
-                      key: contact,
                       child: Row(
                         children: [
                           Column(

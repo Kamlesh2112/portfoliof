@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/experience.dart';
 import 'package:portfolio/models/skills.dart';
 import 'package:portfolio/utils/app_colors.dart';
-import 'package:portfolio/widgets/experience_tile.dart';
 import 'package:portfolio/widgets/experience_tile_mobile.dart';
 import 'package:portfolio/widgets/fontawesome_icon.dart';
 import 'package:portfolio/widgets/skills_tile.dart';
@@ -62,8 +61,8 @@ class MobileAboutPage extends StatelessWidget {
                     onPressed: () => launchLink(
                         'https://drive.google.com/file/d/1mK_3AtPgi3o0hiqryqdE-txjOTcRQMk1/view?usp=sharing'),
                     style: ElevatedButton.styleFrom(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
@@ -72,7 +71,7 @@ class MobileAboutPage extends StatelessWidget {
                       elevation: 0,
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 14,
                       ),
                     ),
                     icon: const Icon(Icons.download),

@@ -61,9 +61,10 @@ class _MobileHomePageState extends State<MobileHomePage> {
                 ),
               ),
               ListTile(
-                onTap: (){
+                onTap: () {
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed('/about');},
+                  Navigator.of(context).pushNamed('/about');
+                },
                 leading: const FaIcon(
                   FontAwesomeIcons.question,
                   color: AppColors.accentColor,
@@ -118,12 +119,11 @@ class _MobileHomePageState extends State<MobileHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ElevatedButton.icon(
-                    onPressed: () => scrollToContainer(contact),
+                    onPressed: () => (),
                     style: ElevatedButton.styleFrom(
                       foregroundColor: AppColors.backgroundColor,
                       backgroundColor: AppColors.accentColor,
                       elevation: 0,
-                      fixedSize: const Size(187, 54),
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_colors.dart';
-import 'package:portfolio/widgets/event_child.dart';
 import 'package:portfolio/widgets/event_child_mobile.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
